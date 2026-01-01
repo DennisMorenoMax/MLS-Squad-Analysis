@@ -1,0 +1,45 @@
+name: CI MLS 2025 Player Data Update
+
+on:
+  # Run daily at midnight UTC
+  schedule:
+    - cron: '0 0 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update-data:
+    runs-on: windows-latest
+
+    steps:
+      # Check out the repository
+      - name: Check out repository
+        uses: actions/checkout@v3
+
+      # Set up Python
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.12'  # choose your preferred Python version
+
+      # Install Python dependencies
+      - name: Install Python packages
+        run: |
+          python -m pip install --upgrade pip
+          pip install pandas itscalledsoccer
+
+      # Run the Python script to update MLS data
+      - name: Run Python data update
+        run: python MLS_25_players_data_retrieval.ipynb  # replace with your Python filename
+
+      # Commit and push updated CSV
+      - name: Commit MLS results
+        run: |
+          git config --local user.email "actions@github.com"
+          git config --local user.name "GitHub Actions"
+          git add players_mls_25.csv
+          git commit -m "MLS 2025 player data updated" || echo "No changes to commit"
+          git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
+          git push origin HEAD:main || echo "No changes to commit"
