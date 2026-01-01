@@ -2,7 +2,7 @@
 
 ## Data collection
 
-"**MLS_25_players_data_retrieval.ipynb**" – Python scripts used to collect MLS player data.
+"**MLS_25_players_data_retrieval.ipynb**" – Python script used to collect MLS player data.
 
 Data is collected using resources from:
 
@@ -28,4 +28,5 @@ Min Played vs Salaries
 ![](/images_app/player_salary_v_min.png)
 
 Maintained by Dennis Moreno
+
 
