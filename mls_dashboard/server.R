@@ -7,7 +7,7 @@ function(input, output, session) {
   
   # Load MLS data from GitHub
   players <- read.csv(
-    "https://raw.githubusercontent.com/DennisMorenoMax/MLS-Player-Stats-2025/master/mls_2025_player_stats.csv",
+    "https://raw.githubusercontent.com/DennisMorenoMax/MLS-Squad-Analysis/refs/heads/main/players_mls_25.csv",
     stringsAsFactors = FALSE
   ) %>%
     clean_names() %>%
