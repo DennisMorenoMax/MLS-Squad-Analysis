@@ -1,4 +1,4 @@
-# 📁 Repository Structure
+# MLS 2025 Player & Squad Analytics
 
 ## Data collection
 
@@ -14,7 +14,7 @@ Credit: [**American Soccer Analysis**](https://www.americansocceranalysis.com/)
 
 ## R Shiny App
 
-[R Shiny app](https://morenomax.shinyapps.io/MLS_25_Players_Dashboard/)
+[**R Shiny app**](https://morenomax.shinyapps.io/MLS_25_Players_Dashboard/)
 
 mls_dashboard/ – R Shiny app that visualizes MLS 2025 squads, including:
 
@@ -28,3 +28,4 @@ Min Played vs Salaries
 ![](/images_app/player_salary_v_min.png)
 
 Maintained by Dennis Moreno
+
